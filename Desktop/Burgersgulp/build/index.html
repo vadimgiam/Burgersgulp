@@ -82,8 +82,8 @@
                     <li class="advantages__item">
                         <div class="advantages__img advantages__img--meat">
                             <!--<img src="img/icons/meat.svg" alt="мясо">-->
-                            <svg class="advantages__svg-sprite">
-                                <use xlink:href="./img/sprite.svg#beef"></use>
+                            <svg class="advantages__svg-sprite svg-sprite svg-sprite--meat">
+                                <use xlink:href="./img/sprite-svg.svg#meat"></use>
                             </svg>
                         </div>
                         <div class="advantages__text-wrap">
@@ -95,8 +95,8 @@
                     <li class="advantages__item">
                         <div class="advantages__img advantages__img--hand">
                             <!--<img src="img/icons/hand.svg" alt="рука">-->
-                            <svg class="advantages__svg-sprite">
-                                <use xlink:href="./img/sprite.svg#hand"></use>
+                            <svg class="advantages__svg-sprite svg-sprite svg-sprite--hand">
+                                <use xlink:href="./img/sprite-svg.svg#hand"></use>
                             </svg>
                         </div>
                         <div class="advantages__text-wrap">
@@ -109,8 +109,8 @@
                     <li class="advantages__item">
                         <div class="advantages__img advantages__img--sheet">
                             <!--<img src="img/icons/natural.svg" alt="лист">-->
-                            <svg class="advantages__svg-sprite">
-                                <use xlink:href="./img/sprite.svg#sheet"></use>
+                            <svg class="advantages__svg-sprite svg-sprite svg-sprite--natural">
+                                <use xlink:href="./img/sprite-svg.svg#natural"></use>
                             </svg>
                         </div>
                         <div class="advantages__text-wrap">
@@ -134,7 +134,7 @@
                             <div class="slider__content--left">
                                 <button type="button" class="slider__content--consist">
                                     <svg class="slider__gamb--svg">
-                                        <use xlink:href="img/sprite.svg#consist"></use>
+                                        <use xlink:href="./img/sprite-svg.svg#burger"></use>
                                     </svg>
                                     <span class="slider__gamb--text">Состав</span>
 
@@ -143,7 +143,7 @@
                                 <img src="img/burgerblack.png" alt="гамбургер" class="slider__gamb--img">
                                 <div class="slider__content--kkal">
                                     <svg class="slider__kkal--svg">
-                                        <use xlink:href="img/sprite.svg#kkal"></use>
+                                        <use xlink:href="./img/sprite-svg.svg#kkal"></use>
                                     </svg>
                                     <span class="slider__kkal--1200">1200</span>
                                     <span class="slider__kkal--kkal">ккал</span>
@@ -236,34 +236,47 @@
 
 
                 <div class="slider__popup slider__popup--open slider__popup--close">
-                    <ul class="slider__list">
+                    <ul class="slider__list--popup">
                         <li class="slider__item">
-                            <img alt="Говядина" class="slider__list--svg list--svg--beef" src="img/icons/beef.svg" width="46" height="39">
+                            <svg class="slider__list--svg list--svg--beef">
+                                <use xlink:href="./img/sprite-svg.svg#beef"></use>
+                            </svg>
+
                             <div class="slider__list--title ">Говядина</div>
                             <div class="slider__list--weight">300 г</div>
                         </li>
                         <li class="slider__item">
-                            <img alt="Булочки" class="slider__list--svg list--svg--beef" src="img/icons/buns.svg" width="46" height="39">
+                            <svg class="slider__list--svg list--svg--beef">
+                                <use xlink:href="./img/sprite-svg.svg#buns"></use>
+                            </svg>
                             <div class="slider__list--title ">Булочки</div>
                             <div class="slider__list--weight">100 г</div>
                         </li>
                         <li class="slider__item">
-                            <img alt="Зелень" class="slider__list--svg list--svg--beef" src="img/icons/salad.svg" width="46" height="39">
+                            <svg class="slider__list--svg list--svg--beef">
+                                <use xlink:href="./img/sprite-svg.svg#salad"></use>
+                            </svg>
                             <div class="slider__list--title ">Зелень</div>
                             <div class="slider__list--weight">70 г</div>
                         </li>
                         <li class="slider__item">
-                            <img alt="Соус" class="slider__list--svg list--svg--beef" src="img/icons/sauce.svg" width="46" height="39">
+                            <svg class="slider__list--svg list--svg--beef">
+                                <use xlink:href="./img/sprite-svg.svg#sauce"></use>
+                            </svg>
                             <div class="slider__list--title ">Соус</div>
                             <div class="slider__list--weight">150 г</div>
                         </li>
                         <li class="slider__item">
-                            <img alt="Овощи" class="slider__list--svg list--svg--beef" src="img/icons/cucumber.svg" width="46" height="39">
+                            <svg class="slider__list--svg list--svg--beef">
+                                <use xlink:href="./img/sprite-svg.svg#cucumber"></use>
+                            </svg>
                             <div class="slider__list--title ">Овощи</div>
                             <div class="slider__list--weight">200 г</div>
                         </li>
                         <li class="slider__item">
-                            <img alt="Сыр" class="slider__list--svg list--svg--beef" src="img/icons/cheese.svg" width="46" height="39">
+                            <svg class="slider__list--svg list--svg--beef">
+                                <use xlink:href="./img/sprite-svg.svg#cheese"></use>
+                            </svg>
                             <div class="slider__list--title ">Сыр</div>
                             <div class="slider__list--weight">80 г</div>
                         </li>
@@ -654,7 +667,7 @@
                             <span class="footer__address">Санкт-Петербург, ул.Бабушкина, д.12/1, 15</span>
                             <div class="footer__phone-wrap">
                                 <svg class="advantages__svg-sprite--phone" width="14" height="14">
-                                    <use xlink:href="img/sprite.svg#phone"></use>
+                                    <use xlink:href="./img/sprite-svg.svg#phone"></use>
                                 </svg>
                                 <a href="tel:+78123771377" class="footer__phone"> +7 (812) 377-13-77</a>
                             </div>
@@ -666,28 +679,28 @@
                             <li class="footer__socials--item">
                                 <a href="#" class="footer__socials--link">
                                     <svg class="advantages__svg-sprite--socials" width="24" height="14">
-                                        <use xlink:href="img/sprite.svg#vk"></use>
+                                        <use xlink:href="./img/sprite-svg.svg#vk"></use>
                                     </svg>
                                 </a>
                             </li>
                             <li class="footer__socials--item">
                                 <a href="#" class="footer__socials--link">
                                     <svg class="advantages__svg-sprite--socials" width="21" height="21">
-                                        <use xlink:href="img/sprite.svg#facebook"></use>
+                                        <use xlink:href="./img/sprite-svg.svg#fb"></use>
                                     </svg>
                                 </a>
                             </li>
                             <li class="footer__socials--item">
                                 <a href="#" class="footer__socials--link">
                                     <svg class="advantages__svg-sprite--socials" width="21" height="21">
-                                        <use xlink:href="img/sprite.svg#insta"></use>
+                                        <use xlink:href="./img/sprite-svg.svg#inst"></use>
                                     </svg>
                                 </a>
                             </li>
                             <li class="footer__socials--item">
                                 <a href="#" class="footer__socials--link">
                                     <svg class="advantages__svg-sprite--socials" width="21" height="18">
-                                        <use xlink:href="img/sprite.svg#tw"></use>
+                                        <use xlink:href="./img/sprite-svg.svg#twitter"></use>
                                     </svg>
                                 </a>
                             </li>

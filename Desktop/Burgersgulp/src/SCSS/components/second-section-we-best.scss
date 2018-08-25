@@ -5,7 +5,7 @@
     height: 100vh;
     background-color: #f6f0ec;
     background-image: url(../img/bg2.jpg);
-    
+
 }
 .we-best__title {
     @include fontOrangeGagalin;
@@ -74,30 +74,30 @@
     margin-bottom: 2%;
     background-repeat: no-repeat;
     background-position: center center;
-    
+
     &--meat{
        /* background-image: url(../../img/icons/meat.svg);*/
-        
+
         width:6.25rem;
         height: 5.6rem;
         @include phone{
             margin-right: 9%;
         }
-        
+
     }
     &--hand{
         /*background-image: url(../../img/icons/hand.svg);*/
-        
+
         width:4.375rem;
         height: 5.31rem;
         @include phone{
             margin-right: 15%;
         }
-        
+
     }
     &--sheet{
         /*background-image: url(../../img/icons/natural.svg);*/
-        
+
         width:5.43rem;
         height: 4.75rem;
         @include  tablet {
@@ -107,11 +107,25 @@
             margin-right: 12%;
         }
     }
-    
+
 }
 .advantages__text-wrap {
     @include phone{
         width: 62%;
     }
-   
+
+}
+.svg-sprite{
+&--meat {
+  width: 6.1rem;
+  height: 5.75rem;
+}
+&--hand {
+  width: 4.5rem;
+  height: 5.31rem;
+}
+&--natural {
+  width: 5.1rem;
+  height: 4.8rem;
+}
 }
