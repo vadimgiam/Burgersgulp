@@ -358,13 +358,13 @@ const right = document.querySelector(".slider__link--right");
 const items = document.querySelector(".slider__list");
 const computed = getComputedStyle(items);
 const itemSl = document.getElementsByClassName("slider__content");
-var a = 0;
-//const result;
+/*var a = 0;
+const result;
 for(var i=0; i<itemSl.length; i++){
 
  a++;
 }
-result = a * 100;
+result = a * 100;*/
 right.addEventListener("click", function(event) {
     event.preventDefault();
     let currentRight = parseInt(computed.right);
@@ -373,7 +373,7 @@ right.addEventListener("click", function(event) {
       currentRight = 0;
     }
 
-    if (currentRight < 500) {
+    if (currentRight < 300) {
       items.style.right = currentRight + 100 + "%";
     }else{
        items.style.right = 0;
@@ -398,71 +398,76 @@ ymaps.ready(init);
 
 var placemarks = [
     {
-        latitude: 59.9712,
-        longitude: 30.3140,
-        hintContent: 'ул. профессора Попова,д.23',
-        balloonContent: 'ул. профессора Попова,д.23'
+        latitude: 59.97,
+        longitude: 30.31,
+        hintContent: 'ул. Литераторов, д. 19',
+        balloonContent:
+            'Самые вкусные бургеры у нас! Заходите по адресу: ул. Литераторов, д. 19'
     },
     {
-        latitude: 59.9494,
-        longitude: 30.3902,
-        hintContent: 'ул. Лафонская,д.2',
-        balloonContent: 'ул. Лафонская,д.2'
+        latitude: 59.91,
+        longitude: 30.51,
+        hintContent: 'Ленинградская ул., д. 9',
+        balloonContent:
+            'Самые вкусные бургеры у нас! Заходите по адресу: Ленинградская ул., д. 9'
     },
     {
-        latitude: 59.8912,
-        longitude: 30.3104,
-        hintContent: 'ул. Старообрядчемкая,д.1',
-        balloonContent: 'ул. Старообрядчемкая,д.1'
-    },
-    {
-        latitude: 59.9150,
-        longitude: 30.4975,
-        hintContent: 'пр. Солидарности,д.21',
-        balloonContent: 'пр. Солидарности,д.21'
-    }
+        latitude: 59.94,
+        longitude: 30.37,
+        hintContent: 'ул. Таврическая, д. 1',
+        balloonContent:
 
-];
-var geoObjects = [];
+            'Самые вкусные бургеры у нас! Заходите по адресу: ул. Таврическая, д. 1'
 
-function init(){
-    var myMap = new ymaps.Map("map", {
-       center: [59.94, 30.32],
+    },
+    {
+      latitude: 59.89,
+      longitude: 30.31,
+      hintContent: 'Московский пр., д. 99',
+      balloonContent:
+
+          'Самые вкусные бургеры у нас! Заходите по адресу: Московский пр., д. 99'
+
+  },
+],
+    geoObjects= [];
+
+function init() {
+    var map = new ymaps.Map('map', {
+        center: [59.94, 30.32],
         zoom: 12,
-        controls: ["zoomControl"],
+        controls: ['zoomControl'],
         behaviors: ['drag']
     });
 
-
     for (var i = 0; i < placemarks.length; i++) {
+            geoObjects[i] = new ymaps.Placemark([placemarks[i].latitude, placemarks[i].longitude],
+            {
+                hintContent: placemarks[i].hintContent,
+                balloonContent: placemarks[i].balloonContent
+            },
+            {
+                iconLayout: 'default#image',
+                iconImageHref: '..//img/map-marker.svg',
+                iconImageSize: [46, 57],
+                iconImageOffset: [-23, -57],
+                iconImageClipRect: [[415, 0], [461, 57]]
+            });
+    }
 
-		geoObjects[i] = new ymaps.Placemark([placemarks[i].latitude, placemarks[i].longitude], {
-			hintContent: placemarks[i].hintContent,
-			balloonContent: placemarks[i].balloonContent
-        },
-        {
-        iconLayout: 'default#image',
-      //  iconImageHref: './img/iconmap.svg',
-        iconImageSize: [46, 57],
-       iconImageOffset: [-23, -57]
-
+    var clusterer = new ymaps.Clusterer({
+        clusterIcons: [
+            {
+                href: '../img/burgerfirst.png',
+                size: [100, 100],
+                offset: [-50, -50]
+            }
+        ],
+        clusterIconContentLayout: null
     });
+
+    map.geoObjects.add(clusterer);
+    clusterer.add(geoObjects);
 }
 
-var clusterer = new ymaps.Clusterer({
-    clusterIcons: [{
-  //   href: './img/burgerfirst.png',
-     size: [100, 100],
-     offsset: [-50, -50]
- }],
-     clusterIconContentLayout: null
 
-
- });
-
-
-map.geoObjects.add(clusterer);
-clusterer.add(geoObjects);
-
-
-}
