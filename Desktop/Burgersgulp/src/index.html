@@ -530,6 +530,22 @@
         <section class="video" id="video">
             <div class="container">
                 <h1 class="video__title">Как мы работаем</h1>
+                <div class="player hidden">
+                    <div class="player__wrapper">
+                      <div id="yt-player"></div>
+                      <div class="player__splash"></div>
+                    </div>
+                    <div class="player__controls">
+                      <button class="player__start"></button>
+                      <div class="player__playback">
+                        <button class="player__playback-button"></button>
+                      </div>
+                      <div class="player__duration">
+                        <span class="player__duration-completed">0:00</span> :
+                        <span class="player__duration-estimate">0:00</span>
+                      </div>
+                    </div>
+                  </div>
             </div>
         </section>
 
@@ -792,7 +808,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous">
     </script>
-
+<script src="https://www.youtube.com/iframe_api"></script>
     <script src="./js/script.min.js">
     </script>
 

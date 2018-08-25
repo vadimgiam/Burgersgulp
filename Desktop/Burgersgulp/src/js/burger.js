@@ -471,3 +471,31 @@ function init() {
 }
 
 
+//video player
+
+
+let player;
+  function onYouTubePlayerAPIReady() {
+    player = new YT.Player('yt-player', {
+      height: '405',
+      width: '660',
+      videoId: '85CfHN0uJz0',
+      playerVars: {
+        controls: 0,
+        disablekb: 0,
+        showinfo: 0,
+        rel: 0,
+        autoplay: 0,
+        modestbranding: 0
+      },
+    });
+  }
+  $(".player__start").on("click", e => {
+    const playerStatus = player.getPlayerState(); // 0 - ended, 1 - played, 2 - paused ...
+
+    if (playerStatus !== 1) {
+      player.playVideo();
+    } else {
+      player.pauseVideo();
+    }
+  });
