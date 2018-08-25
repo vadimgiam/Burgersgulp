@@ -1,0 +1,85 @@
+.footer{
+    
+    background-color: $colorBlack;
+    @include backgroundImage;
+    background-image: url(../img/bg6.jpg);
+    min-height: 60px;
+    width: 100%;
+    @include phone {
+        min-height: 117px;
+    }
+    @include tablet {
+        min-height: 60px;
+    }
+}
+
+.footer__address{
+    @include fontUbuntu;
+    font-size: 0.8rem;
+    line-height: 1.5rem;
+}
+.footer__phone-wrap {
+    @include phone {
+        display: flex;
+    justify-content: center;
+    }
+   
+}
+.footer__phone{
+    @extend .footer__address;
+    color: $colorOrange;
+}
+.advantages__svg-sprite--phone{
+    margin-bottom: -0.7%;
+}
+.footer__socials--list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+.footer__socials--link{
+   text-decoration: none;
+}
+.footer .container{
+    display: flex;
+    min-height: 0;
+    @include phone {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+.footer__contacts{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: -0.5%;
+}
+.footer__left,
+.footer__right {
+    width: 50%;
+}
+.footer__right {
+    display: flex;
+justify-content: flex-end;
+padding-top: 3.1%;
+@include phone {
+    
+justify-content: center;
+}
+}
+.footer__socials--item{
+    margin-right: 20px;
+    &:hover{
+        .advantages__svg-sprite--socials{
+            fill: $colorWhite;
+        }
+    }
+    &:last-child{
+        margin-right: 0;
+    }
+}
+
+.advantages__svg-sprite--socials{
+    fill: #595959;
+    transition: fill  1s ease-out;
+}

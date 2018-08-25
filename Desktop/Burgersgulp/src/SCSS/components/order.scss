@@ -1,0 +1,230 @@
+.order__title{
+    @include fontOrangeGagalin;
+    line-height: 4rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    @include phone {
+        text-align: center;
+        font-size: 3.57rem;
+        line-height: 4.28rem;
+    }
+}
+.form__block-title{
+    @include fontUbuntu;
+    font-size: 0.8rem;
+    line-height: 1.5rem;
+}
+.order{
+    @include backgroundImage;
+    background-color: $colorBlack;
+    background-image: url(../img/bg3.jpg);
+    padding-top: 9%;
+    min-height: 100vh;
+}
+.form__input,
+.form__textaria{
+    @include input;
+    width: 100%;
+}
+.form__textaria{
+    height: 122%;
+}
+.form__row{
+    display: flex;
+    margin-bottom: 20px;
+    @include phone {
+        justify-content: center;
+    }
+}
+.form__radio-list{
+    list-style: none;
+    display: flex;
+    margin: 0;
+    margin-left: 6%;
+    padding-left: 0;
+    margin-top: 8%;
+    @include phone {
+    margin-left: auto;
+    margin-right: auto;
+    }
+}
+.form__radio-item {
+    margin-right: 43px;
+}
+.form__reset{
+    background-color: transparent;
+border: none;
+@extend .form__block-title;
+outline: none;
+cursor: pointer;
+}
+.form__submit{
+    @include btn;
+    @include fontUbuntu;
+    line-height: 0;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-right: 3%;
+}
+
+/*Стилизация чекбоксов и радиобаттонов*/
+.form__radio,
+.form__checkbox {
+    @include visuallyHidden ;
+}
+.form__block{
+    cursor: pointer;
+    position: relative;
+    flex: 1;
+    margin-right: 20px;
+    &:last-child{
+        margin-right: 0;
+    }
+}
+.form__block input[type="radio"]+.radio-indicator {
+    position: absolute;
+    top: 23px;
+    left: -25px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 1);
+    @include phone {
+        top: 19px;
+        
+    }
+}
+.form__block input[type="radio"]:checked+.radio-indicator::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #e35028;
+}
+.form__block input[type="checkbox"]+.checkbox-indicator {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    background-color: rgba(255, 255, 255, 1);
+    @include phone {
+        top: 3px;
+        left: 31%;
+    }
+}
+.form__block input[type="checkbox"]:checked+.checkbox-indicator::before,
+.form__block input[type="checkbox"]:checked+.checkbox-indicator::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 2px;
+    background-repeat: no-repeat;
+    width: 11px;
+    height: 11px;
+    background-image: url(../img/check.png);
+}
+/*Стилизация чекбоксов и радиобаттонов close*/
+.form__radio-item {
+    @include phone {
+        margin-right: 40px;
+    margin-left: 25px;
+       }
+}
+.order__form{
+    display: flex;
+    @include tablet {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+.form__left,
+.form__right{
+    width: 470px;
+    @include tablet{
+        width: 95%;
+    }
+    @include phone{
+        width: 95%;
+    }
+}
+.form__right {
+    margin-left: 6%;
+    @include tablet {
+        margin-left: 0;
+    }
+}
+.form__block-title--mr{
+    margin-left: 6%;
+    @include phone {
+     display: flex;
+    justify-content: center;
+    }
+}
+
+//popup order
+.order__popup{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(47, 50, 52,0.7);
+    
+    display: none;
+    z-index: 60;
+    margin: 0;
+    @include tablet {
+        display: none;
+    }
+    @include phone {
+        display: none;
+    }
+    
+}
+
+.order__popup--open{
+    display: block;
+}
+.order__popup__cont{
+    position: absolute;
+    top: 81%;
+    left: 43%;
+    width: 12.5rem;
+    height: 6.6875rem;
+    border-radius: 5px;
+    background-color: $colorWhite;
+    opacity: 1;
+    margin: 0;
+    padding: 0;
+    padding-top: 1%;
+    padding-left: 1.5%;
+    box-sizing: border-box;
+}
+.order__cont--title{
+    @include  fontUbuntu ;
+    text-align: center;
+    color: $colorBlack;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+.order__cont--btn{
+    @include btn;
+    @include   fontUbuntu ;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-left: 21%;
+    margin-top: 7%;
+}
