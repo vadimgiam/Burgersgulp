@@ -113,6 +113,11 @@ function serve() {
   });
   browserSync.watch(paths.build + '**/*.*', browserSync.reload);
 }
+function fonts(){
+  return gulp
+    .src(`./src/fonts/**`)
+    .pipe(gulp.dest(`./build/fonts/`));
+}
 
 exports.styles = styles;
 exports.scripts = scripts;
@@ -126,7 +131,7 @@ exports.fonts = fonts;
 
 gulp.task('build', gulp.series(
   clean,
-  gulp.parallel(styles, svgSprite, scripts, scriptsVendors, htmls, images)
+  gulp.parallel(styles, svgSprite, scripts, scriptsVendors, htmls, images, fonts)
 ));
 
 gulp.task('default', gulp.series(
@@ -134,8 +139,3 @@ gulp.task('default', gulp.series(
   gulp.parallel(styles, svgSprite, scripts, scriptsVendors, htmls, images,fonts),
   gulp.parallel(watch, serve)
 ));
-gulp.task("fonts", () => {
-  return gulp
-    .src(`./src/fonts/**`)
-    .pipe(gulp.dest(`./build/fonts/`));
-});
