@@ -24,7 +24,7 @@ if (op < 1) {
 
 navButtonClose.addEventListener("click", function(evt){
     evt.preventDefault();
-    
+
     setTimeout(function fooClose(){
         if (op >= 0) {
             op -= 0.1;
@@ -38,7 +38,7 @@ navButtonClose.addEventListener("click", function(evt){
 document.addEventListener("keydown", function(evt){
     if(evt.keyCode === 27){
         if (navPopup.classList.contains("nav-popup--open")) {
-            
+
             setTimeout(function fooClose(){
                 if (op >= 0) {
                     op -= 0.1;
@@ -48,13 +48,13 @@ document.addEventListener("keydown", function(evt){
                     navPopup.classList.remove("nav-popup--open");
                 }
                 }, 100);
-        }   
+        }
     }
 });
 
 for (var i = 0; i < navItemLink.length; i++){
     navItemLink[i].addEventListener("click", function(evt){
-        
+
         setTimeout(function fooClose(){
             if (op >= 0) {
                 op -= 0.1;
@@ -65,7 +65,7 @@ for (var i = 0; i < navItemLink.length; i++){
             }
             }, 100);
     });
-    
+
 }
 
 
@@ -89,7 +89,7 @@ var openCloseBtn = document.querySelectorAll('.team__member');
 var a;
 for (a = 0; a < openCloseBtn.length; a++) {
     openCloseBtn[a].addEventListener('click', function() {
-        
+
         if(!(this).classList.contains('team__member--active')) {
             for(var b = 0; b < openCloseBtn.length; b++) {
                 openCloseBtn[b].classList.remove('team__member--yellow');
@@ -130,7 +130,7 @@ sectionMenu.addEventListener('click', function(e) {
         }
       } else {
         for (let m = 0; m < menuOpenClose.length; m++) {
-            menuOpenClose[m].classList.remove('menu__item--active'); 
+            menuOpenClose[m].classList.remove('menu__item--active');
             for (let y = 0; y < menuTextBtnColor.length; y++){
                 menuTextBtnColor[y].classList.remove('menu__item--yellow');
             }
@@ -139,7 +139,7 @@ sectionMenu.addEventListener('click', function(e) {
             menuTextBtnColor[y].classList.add('menu__item--yellow');
         }
         menuOpenClose[m].classList.add('menu__item--active');
-        
+
     }
   })
 }
@@ -154,7 +154,7 @@ var orderPopup = document.querySelector(".order__popup");
 sendButton.addEventListener("click", function(event){
 event.preventDefault();
 if(validateForm(myForm)){
-    
+
 const data = {
    name: myForm.elements.name.value,
    phone:myForm.elements.phone.value,
@@ -175,15 +175,15 @@ if(xhr.response.status <= 400){
     closeOrderPopup.addEventListener("click", function(evt){
         evt.preventDefault();
         orderPopup.classList.remove("order__popup--open");
-            
+
     });
     document.addEventListener("keydown", function(evt){
         if(evt.keyCode === 27){
             if (orderPopup.classList.contains("order__popup--open")) {
-         
+
                 orderPopup.classList.remove("order__popup--open");
-                 
-            }   
+
+            }
         }
     });
 }
@@ -282,10 +282,10 @@ var reviewsBtnClose = document.querySelector(".cont__btn");
 
 for(let r = 0; r < reviewBtnOpen.length; r++){
     reviewBtnOpen[r].addEventListener("click", function(e){
-    
+
         e.preventDefault();
         successOverlay.classList.add("reviews__popup--open");
-    
+
     });
 }
 
@@ -293,18 +293,18 @@ for(let r = 0; r < reviewBtnOpen.length; r++){
     reviewsBtnClose.addEventListener("click", function(e){
         e.preventDefault();
         successOverlay.classList.remove("reviews__popup--open");
-          
+
     });
 
 
 document.addEventListener("keydown", function(e){
     if(e.keyCode === 27){
         if (successOverlay.classList.contains("reviews__popup--open")) {
-            
-            
+
+
             successOverlay.classList.remove("reviews__popup--open");
-                
-        }   
+
+        }
     }
 });
 */
@@ -321,7 +321,7 @@ for (let r=0; r < reviewBtnOpen.length; r++){
     reviewBtnOpen[r].addEventListener("click", function(e){
         e.preventDefault();
         var z = this;
-        
+
         var thisParent = z.parentNode;
 
 const name = thisParent.querySelector(".reviews__hover--title");
@@ -339,8 +339,8 @@ reviewsBtnClose.addEventListener("click", function(e){
 document.addEventListener("keydown", function(e){
     if(e.keyCode === 27){
         if (successOverlay.style.display = "block") {
-            successOverlay.style.display = "none";  
-        }   
+            successOverlay.style.display = "none";
+        }
     }
 });
 
@@ -357,37 +357,44 @@ const left = document.querySelector(".slider__link--left");
 const right = document.querySelector(".slider__link--right");
 const items = document.querySelector(".slider__list");
 const computed = getComputedStyle(items);
+const itemSl = document.getElementsByClassName("slider__content");
+var a = 0;
+const result;
+for(var i=0; i<itemSl.length; i++){
 
+ a++;
+}
+result = a * 100;
 right.addEventListener("click", function(event) {
     event.preventDefault();
     let currentRight = parseInt(computed.right);
-  
-    if (!currentRight) {
+
+    /*if (!currentRight) {
       currentRight = 0;
-    }
-    
-    if (currentRight < 200) {
+    }*/
+
+    if (currentRight < 500) {
       items.style.right = currentRight + 100 + "%";
     }else{
-        items.style.right = 0;
+    //    items.style.right = 0;
     }
   });
 
   left.addEventListener("click", function(event) {
     event.preventDefault();
     let currentRight = parseInt(computed.right);
-  
+
     if (!currentRight) {
       currentRight = 0;
     }
-  
+
     if (currentRight > 0) {
       items.style.right = currentRight - 100 + "%";
     }
   });
 
 // MAP
-ymaps.ready(init);
+/*ymaps.ready(init);
 
 var placemarks = [
     {
@@ -414,40 +421,40 @@ var placemarks = [
         hintContent: 'пр. Солидарности,д.21',
         balloonContent: 'пр. Солидарности,д.21'
     }
-   
-];
-var geoObjects = [];
 
-function init(){ 
+];
+//var geoObjects = [];
+
+function init(){
     var myMap = new ymaps.Map("map", {
        center: [59.94, 30.32],
         zoom: 12,
         controls: ["zoomControl"],
         behaviors: ['drag']
-    }); 
-    
- /* var placemark =  new ymaps.Placemark([59.9712,30.3140],{
+    });
+
+  var placemark =  new ymaps.Placemark([59.9712,30.3140],{
     hintContent: 'пр. Солидарности,д.21',
     balloonContent: 'пр. Солидарности,д.21'
-  });*/
-    for (var i = 0; i < placemarks.length; i++) {
-        
+  });
+/*    for (var i = 0; i < placemarks.length; i++) {
+
 		geoObjects[i] = new ymaps.Placemark([placemarks[i].latitude, placemarks[i].longitude], {
 			hintContent: placemarks[i].hintContent,
 			balloonContent: placemarks[i].balloonContent
-        }, 
+        },
         {
         iconLayout: 'default#image',
-        iconImageHref: 'img/icons/iconmap.svg',
+      //  iconImageHref: './img/iconmap.svg',
         iconImageSize: [46, 57],
        iconImageOffset: [-23, -57]
-        
+
     });
 }
-    
-var clusterer = new ymaps.Clusterer({
+*/
+/*var clusterer = new ymaps.Clusterer({
     clusterIcons: [{
-     href: 'img/burgerfirst.png',
+  //   href: './img/burgerfirst.png',
      size: [100, 100],
      offsset: [-50, -50]
  }],
@@ -455,9 +462,70 @@ var clusterer = new ymaps.Clusterer({
 
 
  });
- 
- map.geoObjects.add(clusterer);
- clusterer.add(geoObjects);
 
-// map.geoObjects.add(placemark);
+//map.geoObjects.add(geoObjects);
+ //map.geoObjects.add(clusterer);
+ //clusterer.add(geoObjects);
+
+ map.geoObjects.add(placemark);
+}*/
+
+
+ymaps.ready(init);
+
+var map,
+    placemarks = [
+    {
+        latitude: 59.97,
+        longitude: 30.3,
+        hintContent: '<div class="map__hint">ул. Литераторов, д. 19</div>',
+        balloonContent: [
+            '<div class="map__balloon">',
+            '<img class="map__burger-img" src="img/burger.png" alt="Бургер"/>',
+            'Самые вкусные бургеры у нас! Заходите по адресу: ул. Литераторов, д. 21',
+            '</div>'
+        ]
+    },
+    {
+        latitude: 59.94,
+        longitude: 30.25,
+        hintContent: '<div class="map__hint">Малый проспект В. О., д. 64к1</div>',
+        balloonContent: [
+            '<div class="map__balloon">',
+            '<img class="map__burger-img" src="img/burger.png" alt="Бургер"/>',
+            'Самые вкусные бургеры у нас! Заходите по адресу: уМалый проспект В. О., д. 64к1',
+            '</div>'
+        ]
+    },
+    {
+        latitude: 59.93,
+        longitude: 30.34,
+        hintContent: '<div class="map__hint">наб. реки Фонтанки, д. 56</div>',
+        balloonContent: [
+            '<div class="map__balloon">',
+            '<img class="map__burger-img" src="img/burger.png" alt="Бургер"/>',
+            'Самые вкусные бургеры у нас! Заходите по адресу: наб. реки Фонтанки, д. 56',
+            '</div>'
+        ]
+    }];
+
+function init() {
+    map = new ymaps.Map('map', {
+        center: [59.95, 30.32],
+        zoom: 12
+    });
+
+    placemarks.forEach(function(obj) {
+        placemark = new ymaps.Placemark([obj.latitude, obj.longitude], {
+            hintContent: obj.hintContent,
+            balloonContent: obj.balloonContent.join('')
+        }, {
+            iconLayout: 'default#image',
+          //  iconImageHref: 'img/map-marker.png',
+            iconImageSize: [46, 57],
+            iconImageOffset: [-23, -57]
+        });
+
+        map.geoObjects.add(placemark);
+    });
 }

@@ -46,7 +46,7 @@ function styles() {
 }
 
 function svgSprite() {
-  return gulp.src(paths.src + 'icons/*.svg')
+  return gulp.src(paths.src + 'img/*.svg')
     .pipe(svgmin(function (file) {
       return {
         plugins: [{

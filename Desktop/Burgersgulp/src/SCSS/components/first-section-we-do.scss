@@ -362,13 +362,12 @@ body {
     @include tablet {
         display: none;
     }
-    @include phone {
-        display: none;
-    }
 }
 
 .nav-popup--open {
-    display: block;
+    @include tablet {
+        display: block;
+    }
 }
 
 
