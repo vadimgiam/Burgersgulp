@@ -490,12 +490,41 @@ let player;
       },
       events: {
         onReady: onPlayerReady,
-        //onStateChange: onPlayerStateChange
+        onStateChange: onPlayerStateChange
       }
     });
   }
-  $(".player__start").on("click", e => {
-    const playerStatus = player.getPlayerState(); // 0 - ended, 1 - played, 2 - paused ...
+  function onPlayerReady(event) {
+    var duration = player.getDuration();
+    var interval = void 0;
+
+    $(".player").removeClass("hidden");
+
+    clearInterval(interval);
+
+    interval = setInterval(function () {
+      var completed = player.getCurrentTime();
+      var percents = completed / duration * 100;
+
+      changeButtonPosition(percents);
+    }, 1000);
+  }
+
+  function onPlayerStateChange(event) {
+    var playerButton = $(".player__start");
+    switch (event.data) {
+      case 1:
+        $(".player__wrapper").addClass("active");
+        playerButton.addClass("paused");
+        break;
+      case 2:
+        playerButton.removeClass("paused");
+        break;
+    }
+  }
+
+  $(".player__start").on("click", function (e) {
+    var playerStatus = player.getPlayerState(); // 0 - ended, 1 - played, 2 - paused ...
 
     if (playerStatus !== 1) {
       player.playVideo();
@@ -503,21 +532,41 @@ let player;
       player.pauseVideo();
     }
   });
-  function onPlayerReady(event) {
-    const duration = player.getDuration();
-    let interval;
-    updateTimerDisplay();
+  $(".player__playback").on("click", function (e) {
+    e.preventDefault();
+    var bar = $(e.currentTarget);
+    var newButtonPosition = e.pageX - bar.offset().left;
+    var clickedPercents = newButtonPosition / bar.width() * 100;
+    var newPlayerTime = player.getDuration() / 100 * clickedPercents;
 
-    $(".player").removeClass("hidden");
+    changeButtonPosition(clickedPercents);
+    player.seekTo(newPlayerTime);
+  });
 
-    clearInterval(interval);
+  changeVolumeButtonPosition(100);
 
-    interval = setInterval(() => {
-      const completed = player.getCurrentTime();
-      const percents = (completed / duration) * 100;
+  $(".player__volume-bar").on("click", function (e) {
+    e.preventDefault();
+    var bar = $(e.currentTarget);
+    var newButtonPosition = e.pageX - bar.offset().left;
+    var clickedPercents = newButtonPosition / bar.width() * 100;
 
-      changeButtonPosition(percents);
+    changeVolumeButtonPosition(clickedPercents);
+    player.setVolume(clickedPercents);
+  });
 
-      updateTimerDisplay();
-    }, 1000);
+  $(".player__splash").on("click", function (e) {
+    player.playVideo();
+  });
+
+  function changeButtonPosition(percents) {
+    $(".player__playback-button").css({
+      left: percents + '%'
+    });
+  }
+
+  function changeVolumeButtonPosition(percents) {
+    $(".player__volume-button").css({
+      left: percents + '%'
+    });
   }
