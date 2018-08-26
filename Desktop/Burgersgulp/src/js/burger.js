@@ -448,7 +448,7 @@ function init() {
             },
             {
                 iconLayout: 'default#image',
-                iconImageHref: '..//img/map-marker.svg',
+                iconImageHref: './img/map-marker.svg',
                 iconImageSize: [46, 57],
                 iconImageOffset: [-23, -57],
                 iconImageClipRect: [[415, 0], [461, 57]]
@@ -458,7 +458,7 @@ function init() {
     var clusterer = new ymaps.Clusterer({
         clusterIcons: [
             {
-                href: '../img/burgerfirst.png',
+                href: './img/burgerfirst.png',
                 size: [100, 100],
                 offset: [-50, -50]
             }
@@ -488,6 +488,10 @@ let player;
         autoplay: 0,
         modestbranding: 0
       },
+      events: {
+        onReady: onPlayerReady,
+        //onStateChange: onPlayerStateChange
+      }
     });
   }
   $(".player__start").on("click", e => {
@@ -499,3 +503,21 @@ let player;
       player.pauseVideo();
     }
   });
+  function onPlayerReady(event) {
+    const duration = player.getDuration();
+    let interval;
+    updateTimerDisplay();
+
+    $(".player").removeClass("hidden");
+
+    clearInterval(interval);
+
+    interval = setInterval(() => {
+      const completed = player.getCurrentTime();
+      const percents = (completed / duration) * 100;
+
+      changeButtonPosition(percents);
+
+      updateTimerDisplay();
+    }, 1000);
+  }
