@@ -4,7 +4,7 @@
     background-image: url(../img/bg4.jpg);
     height: 100vh;
     position: relative;
-    
+
 }
 .team__wrap{
     min-height: 650px;
@@ -28,7 +28,7 @@ min-height: 100%;
     line-height: 4rem;
     margin-left: -16%;
     margin-bottom: 8%;
-   
+
      @include tablet {
         margin-left: 0;
         margin-bottom: 5.5%;
@@ -69,7 +69,7 @@ min-height: 100%;
     margin-left: 1%;
     margin-top: 2%;
     display: flex;
-   
+
      @include tablet {
          display: flex;
         flex-direction: column;
@@ -87,13 +87,13 @@ min-height: 100%;
     overflow: visible;
    margin-bottom: 6%;
    //transition: height .5s ease-out, margin-bottom .5s ease-out;
-   
+
    @include tablet {
-    
+
   margin-bottom: 28%;
 }
 @include phone {
-   
+
    margin-bottom: 26%;
 }
 }
@@ -107,9 +107,9 @@ min-height: 100%;
     @include fontOrangeGagalin ;
     font-size: 0.8rem;
     line-height: 1.75rem;
-    color: $colorWhite; 
+    color: $colorWhite;
     position: relative;
-    
+
 &::before{
     content: "";
     cursor: pointer;
@@ -121,24 +121,24 @@ min-height: 100%;
     border-top: 8px solid #f9b43b;
     border-left: 5.5px solid transparent;
     border-right: 5.5px solid transparent;
-  
+
 }
 @include phone {
     font-size: 1.5rem;
-    line-height: 1.8rem; 
+    line-height: 1.8rem;
  }
  @include tablet {
    font-size: 1.5rem;
-   line-height: 1.8rem; 
+   line-height: 1.8rem;
  }
 }
 
 .team__member.team__member--active::before {
-   
+
     transform: rotate(180deg);
     transition: transform .5s ease-out;
-    
-    
+
+
 }
 .team__member--yellow{
 color: #f9b43b;
@@ -158,17 +158,17 @@ color: #f9b43b;
     line-height: 1.5rem;
     font-weight:600;
     @include phone {
-        margin-bottom: -1%; 
+        margin-bottom: -1%;
      }
      @include tablet {
-        margin-bottom: -1%; 
+        margin-bottom: -1%;
      }
 }
 .team__block--text{
     @include fontUbuntu ;
     font-size: 0.8rem;
     line-height: 1.5rem;
-    
+
 }
 .team__content {
     display: flex;
@@ -185,7 +185,7 @@ color: #f9b43b;
 }
 .team__item {
     margin-bottom: 4.5%;
-  
+
      @include tablet {
         display: flex;
         flex-direction: column;
@@ -202,7 +202,7 @@ color: #f9b43b;
     margin-left: 4%;
     margin-top: -4%;
     min-width: 43%;
-   
+
      @include tablet {
         display: flex;
         flex-direction: column;

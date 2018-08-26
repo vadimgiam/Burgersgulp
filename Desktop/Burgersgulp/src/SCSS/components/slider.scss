@@ -271,9 +271,9 @@ margin-left: 4%;
 
 .slider__popup{
     position: absolute;
-    display: block;
-    top: -0.1rem;
-    left: 8.4rem;
+    display: none;
+    top: -2.1rem;
+    left: 7.8rem;
     width: 16.8rem;
     min-height: 20.75rem;
     background-color: rgba(255,255,255,0.9);
@@ -282,13 +282,13 @@ margin-left: 4%;
     padding-left: 2%;
     box-sizing: border-box;
     border-radius: 5px;
-    /*&--close{
+    &--close{
         display: none;
     }
     &--open{
-        display: block;
+        display: none;
     }
-*/
+
     @include tablet {
         top: -4.8rem;
          left: 4.3rem;
@@ -300,6 +300,9 @@ margin-left: 4%;
         left: 4.2rem;
 
      }
+}
+.slider__content--consist:hover ~ .slider__popup{
+  display: block;
 }
 .slider__list{
     list-style: none;
