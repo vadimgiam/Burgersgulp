@@ -358,13 +358,12 @@ const right = document.querySelector(".slider__link--right");
 const items = document.querySelector(".slider__list");
 const computed = getComputedStyle(items);
 const itemSl = document.getElementsByClassName("slider__content");
-/*var a = 0;
-const result;
-for(var i=0; i<itemSl.length; i++){
-
+var a = 0;
+let result = 0;
+for(var i=1; i<itemSl.length; i++){
  a++;
 }
-result = a * 100;*/
+console.log(result);
 right.addEventListener("click", function(event) {
     event.preventDefault();
     let currentRight = parseInt(computed.right);
@@ -373,8 +372,8 @@ right.addEventListener("click", function(event) {
       currentRight = 0;
     }
 
-    if (currentRight < 300) {
-      items.style.right = currentRight + 100 + "%";
+    if (currentRight < result) {
+      items.style.right = currentRight + items.clientWidth + "px";
     }else{
        items.style.right = 0;
     }
@@ -389,7 +388,7 @@ right.addEventListener("click", function(event) {
     }
 
     if (currentRight > 0) {
-      items.style.right = currentRight - 100 + "%";
+      items.style.right = currentRight - items.clientWidth + "px";
     }
   });
 
