@@ -171,15 +171,15 @@ const xhr = new XMLHttpRequest();
 xhr.responseType = "json";
 xhr.open("POST","https://webdev-api.loftschool.com/sendmail");
 xhr.send(JSON.stringify(data));
-xhr.addEventListener("load", function(){
-if(xhr.response.status <= 400){
+xhr.onreadystatechange = function(){
+if(xhr.status <= 400){
         orderPopup.classList.add("order__popup--open");
         orderPopupText.innerHTML = "Сообщение отправлено";
 }else{
   orderPopup.classList.add("order__popup--open");
   orderPopupText.innerHTML = "Ошибка";
 }
-});
+};
 }
 
 });
@@ -531,11 +531,13 @@ let player;
 
   $(".player__start").on("click", function (e) {
     var playerStatus = player.getPlayerState(); // 0 - ended, 1 - played, 2 - paused ...
-
+    var playerSplashButton = $(".player__splash");
     if (playerStatus !== 1) {
       player.playVideo();
+      playerSplashButton.addClass("splash-active");
     } else {
       player.pauseVideo();
+      playerSplashButton.removeClass("splash-active");
     }
   });
   $(".player__playback").on("click", function (e) {
@@ -562,7 +564,15 @@ let player;
   });
 
   $(".player__splash").on("click", function (e) {
-    player.playVideo();
+    var playerStatus = player.getPlayerState(); // 0 - ended, 1 - played, 2 - paused ...
+    var playerSplashButton = $(".player__splash");
+    if (playerStatus !== 1) {
+      player.playVideo();
+      playerSplashButton.addClass("splash-active");
+    } else {
+      player.pauseVideo();
+      playerSplashButton.removeClass("splash-active");
+    }
   });
 
   function changeButtonPosition(percents) {

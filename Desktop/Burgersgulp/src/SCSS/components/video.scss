@@ -85,6 +85,7 @@ top: 12%;
   height: 23px;
   background-image: url(../img/volume.svg);
   background-size: contain;
+  cursor: pointer;
 }
 .player__volume-bar{
   position: absolute;
@@ -115,4 +116,8 @@ top: 12%;
   left: 45%;
   background: url("../img/Play-white.svg") center center/cover no-repeat;
   cursor: pointer;
+
+}
+.splash-active{
+  display: none;
 }
