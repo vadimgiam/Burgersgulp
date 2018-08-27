@@ -150,6 +150,23 @@ var myForm = document.querySelector(".form");
 var sendButton = document.querySelector(".form__submit");
 var closeOrderPopup = document.querySelector(".order__cont--btn");
 var orderPopup = document.querySelector(".order__popup");
+var orderPopupText = document.querySelector(".order__cont--title");
+xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+
+closeOrderPopup.addEventListener("click", function(evt){
+  evt.preventDefault();
+  orderPopup.classList.remove("order__popup--open");
+
+});
+document.addEventListener("keydown", function(evt){
+  if(evt.keyCode === 27){
+      if (orderPopup.classList.contains("order__popup--open")) {
+
+          orderPopup.classList.remove("order__popup--open");
+
+      }
+  }
+});
 
 sendButton.addEventListener("click", function(event){
 event.preventDefault();
@@ -167,25 +184,11 @@ xhr.open("POST","https://webdev-api.loftschool.com/sendmail");
 xhr.send(JSON.stringify(data));
 xhr.addEventListener("load", function(){
 if(xhr.response.status <= 400){
-    sendButton.addEventListener("click", function(evt){
-        evt.preventDefault();
         orderPopup.classList.add("order__popup--open");
-    });
-
-    closeOrderPopup.addEventListener("click", function(evt){
-        evt.preventDefault();
-        orderPopup.classList.remove("order__popup--open");
-
-    });
-    document.addEventListener("keydown", function(evt){
-        if(evt.keyCode === 27){
-            if (orderPopup.classList.contains("order__popup--open")) {
-
-                orderPopup.classList.remove("order__popup--open");
-
-            }
-        }
-    });
+        orderPopupText.innerHTML = "Сообщение отправлено";
+}else{
+  orderPopup.classList.add("order__popup--open");
+  orderPopupText.innerHTML = "Ошибка";
 }
 });
 }
@@ -571,7 +574,7 @@ let player;
   }
 
  // One Page Scroll
-
+/*
  const sections = $(".section");
 const display = $(".maincontent");
 let inScroll = false;
@@ -663,9 +666,11 @@ if (isMobile) {
        * плагин возвращает фактическое...
        * ...
        */
+      /*
       const scrollDirection = direction === 'down' ? 'up' : 'down';
 
       scrollToSection(scrollDirection);
     }
   });
 }
+*/
