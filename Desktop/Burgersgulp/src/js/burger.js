@@ -156,7 +156,7 @@ var orderPopupText = document.querySelector(".order__cont--title");
 
 
 
-sendButton.addEventListener("click", function(event){
+myForm.addEventListener("submit", function(event){
 event.preventDefault();
 if(validateForm(myForm)){
 
@@ -167,7 +167,7 @@ const data = {
 };
 
 const xhr = new XMLHttpRequest();
-xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+//xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
 xhr.responseType = "json";
 xhr.open("POST","https://webdev-api.loftschool.com/sendmail");
 xhr.send(JSON.stringify(data));
