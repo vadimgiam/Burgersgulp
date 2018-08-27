@@ -379,7 +379,7 @@ right.addEventListener("click", function(event) {
       currentRight = 0;
     }
 
-    if (currentRight < result) {
+    if (currentRight <= result) {
       items.style.right = currentRight + items.clientWidth + "px";
     }else{
        items.style.right = 0;
@@ -518,13 +518,19 @@ let player;
 
   function onPlayerStateChange(event) {
     var playerButton = $(".player__start");
+
     switch (event.data) {
       case 1:
         $(".player__wrapper").addClass("active");
-        playerButton.addClass("paused");
+        //playerButton.addClass("paused");
+        //playerButton.removeClass("player__start");
+        playerButton.toggleClass("player__start paused");
         break;
       case 2:
-        playerButton.removeClass("paused");
+        //playerButton.removeClass("paused");
+        //playerButton.addClass("player__start");
+        playerButton.toggleClass("paused player__start ");
+
         break;
     }
   }
@@ -532,12 +538,16 @@ let player;
   $(".player__start").on("click", function (e) {
     var playerStatus = player.getPlayerState(); // 0 - ended, 1 - played, 2 - paused ...
     var playerSplashButton = $(".player__splash");
+
+
     if (playerStatus !== 1) {
       player.playVideo();
       playerSplashButton.addClass("splash-active");
+
     } else {
       player.pauseVideo();
       playerSplashButton.removeClass("splash-active");
+
     }
   });
   $(".player__playback").on("click", function (e) {
@@ -586,7 +596,21 @@ let player;
       left: percents + '%'
     });
   }
+  $(".player__volume-icon").on("click", function (e) {
+    var playerStatus = player.getPlayerState(); // 0 - ended, 1 - played, 2 - paused ...
+    var playerMuteButton = $(".player__volume-icon");
 
+
+    if (playerStatus !== 1) {
+      player.mute();
+      //playerSplashButton.addClass("splash-active");
+
+    } else {
+      player.unMute();
+      //playerSplashButton.removeClass("splash-active");
+
+    }
+  });
  // One Page Scroll
 /*
  const sections = $(".section");
