@@ -151,22 +151,10 @@ var sendButton = document.querySelector(".form__submit");
 var closeOrderPopup = document.querySelector(".order__cont--btn");
 var orderPopup = document.querySelector(".order__popup");
 var orderPopupText = document.querySelector(".order__cont--title");
-xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
 
-closeOrderPopup.addEventListener("click", function(evt){
-  evt.preventDefault();
-  orderPopup.classList.remove("order__popup--open");
 
-});
-document.addEventListener("keydown", function(evt){
-  if(evt.keyCode === 27){
-      if (orderPopup.classList.contains("order__popup--open")) {
 
-          orderPopup.classList.remove("order__popup--open");
 
-      }
-  }
-});
 
 sendButton.addEventListener("click", function(event){
 event.preventDefault();
@@ -179,6 +167,7 @@ const data = {
 };
 
 const xhr = new XMLHttpRequest();
+xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
 xhr.responseType = "json";
 xhr.open("POST","https://webdev-api.loftschool.com/sendmail");
 xhr.send(JSON.stringify(data));
@@ -193,6 +182,21 @@ if(xhr.response.status <= 400){
 });
 }
 
+});
+
+closeOrderPopup.addEventListener("click", function(evt){
+  evt.preventDefault();
+  orderPopup.classList.remove("order__popup--open");
+
+});
+document.addEventListener("keydown", function(evt){
+  if(evt.keyCode === 27){
+      if (orderPopup.classList.contains("order__popup--open")) {
+
+          orderPopup.classList.remove("order__popup--open");
+
+      }
+  }
 });
 
 function validateForm(form) {
