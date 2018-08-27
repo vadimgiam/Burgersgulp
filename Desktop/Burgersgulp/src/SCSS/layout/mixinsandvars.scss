@@ -24,7 +24,12 @@ $colorRed:#e35028;
     display: block;
     position: relative;
     min-height: 650px;
-    
+
+}
+@mixin section {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
 }
 @mixin visuallyHidden {
     position: absolute;

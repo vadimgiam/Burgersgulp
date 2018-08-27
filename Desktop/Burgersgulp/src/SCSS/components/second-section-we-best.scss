@@ -2,7 +2,8 @@
 
 .we-best{
     @include backgroundImage;
-    height: 100vh;
+    @include section;
+
     background-color: #f6f0ec;
     background-image: url(../img/bg2.jpg);
 

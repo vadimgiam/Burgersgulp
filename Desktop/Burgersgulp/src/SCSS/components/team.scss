@@ -1,8 +1,9 @@
 .team{
     @include backgroundImage;
+    @include section;
     background-color: #111114;
     background-image: url(../img/bg4.jpg);
-    height: 100vh;
+
     position: relative;
 
 }

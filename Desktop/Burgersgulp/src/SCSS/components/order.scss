@@ -17,6 +17,7 @@
 }
 .order{
     @include backgroundImage;
+    @include section;
     background-color: $colorBlack;
     background-image: url(../img/bg3.jpg);
     padding-top: 9%;
@@ -94,7 +95,7 @@ cursor: pointer;
     background-color: rgba(255, 255, 255, 1);
     @include phone {
         top: 19px;
-        
+
     }
 }
 .form__block input[type="radio"]:checked+.radio-indicator::before {
@@ -176,7 +177,7 @@ cursor: pointer;
     width: 100%;
     height: 100%;
     background-color: rgba(47, 50, 52,0.7);
-    
+
     display: none;
     z-index: 60;
     margin: 0;
@@ -186,7 +187,7 @@ cursor: pointer;
     @include phone {
         display: none;
     }
-    
+
 }
 
 .order__popup--open{

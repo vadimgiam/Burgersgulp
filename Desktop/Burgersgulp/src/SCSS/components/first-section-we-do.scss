@@ -28,12 +28,7 @@ body {
   transition: 1s;
   will-change: transform;
 }
-.section{
-  height: 100vh;
 
-  position: relative;
-  overflow: hidden;
-}
 .container {
     @include container;
     @include tablet {
@@ -53,6 +48,7 @@ body {
 
 .we-do {
     @include backgroundImage;
+    @include section;
     background-color: #111114;
     background-image: url(../img/bg1.jpg);
 

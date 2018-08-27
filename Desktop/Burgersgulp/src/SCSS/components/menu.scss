@@ -1,5 +1,6 @@
 .menu{
     @include backgroundImage;
+    @include section;
     background-color: #111114;
     background-image: url(../img/bg5.jpg);
 
