@@ -38,9 +38,16 @@
   @include tablet{
     width: 720px;
   }
+  @include beetweenFullandTablet3{
+    width: 480px;
+  }
+
   @include phone{
     width: 460px;
   }
+  @include beetweenphoneandMin3 {
+    width: 320px;
+ }
 }
 .player__start{
   background-color: transparent;
@@ -96,6 +103,19 @@ position: absolute;
   top: 15px;
   left: 50px;
   cursor: pointer;
+  @include tablet {
+    width: 600px;
+ }
+ @include beetweenFullandTablet3{
+   width: 420px;
+ }
+
+ @include phone{
+  width: 385px;
+ }
+ @include beetweenphoneandMin3{
+  width: 280px;
+}
 }
 
 .player__playback-button {
@@ -120,7 +140,15 @@ position: absolute;
   background-image: url(../img/volume.svg);
   background-size: contain;
   cursor: pointer;
+  display: block;
+  @include tablet {
+    display: none;
+ }
+ @include phone{
+  display: none;
+ }
 }
+
 .player__volume-bar{
   position: absolute;
   height: 4px;
@@ -128,6 +156,12 @@ position: absolute;
   top: 15px;
   width: 60px;
   left: 580px;
+  @include tablet {
+    display: none;
+ }
+ @include phone{
+  display: none;
+ }
 }
 .player__volume-button{
   background: #626262;
@@ -140,6 +174,12 @@ position: absolute;
   top: -4px;
   transform: translateX(-50%);
   left: 0;
+  @include tablet {
+    display: none;
+ }
+ @include phone{
+  display: none;
+ }
 }
 .player__splash{
   content: "";
@@ -150,7 +190,14 @@ position: absolute;
   left: 45%;
   background: url("../img/Play-white.svg") center center/cover no-repeat;
   cursor: pointer;
-
+  @include tablet {
+    background: url("../img/Play-black.svg") center center/cover no-repeat;
+    width:84px;
+  height: 116px;
+ }
+ @include phone{
+  background: url("../img/Play-black.svg") center center/cover no-repeat;
+ }
 }
 .splash-active{
   display: none;

@@ -379,7 +379,7 @@ right.addEventListener("click", function(event) {
       currentRight = 0;
     }
 
-    if (currentRight <= result) {
+    if (currentRight >= result) {
       items.style.right = currentRight + items.clientWidth + "px";
     }else{
        items.style.right = 0;
@@ -597,12 +597,12 @@ let player;
     });
   }
   $(".player__volume-icon").on("click", function (e) {
-    var playerStatus = player.getPlayerState(); // 0 - ended, 1 - played, 2 - paused ...
+   // var playerStatus = true; // 0 - ended, 1 - played, 2 - paused ...
     var playerMuteButton = $(".player__volume-icon");
 
 
-    if (playerStatus !== 1) {
-      player.mute();
+    if (player.mute() !== true) {
+      player.Mute();
       //playerSplashButton.addClass("splash-active");
 
     } else {
@@ -611,104 +611,16 @@ let player;
 
     }
   });
- // One Page Scroll
-/*
- const sections = $(".section");
-const display = $(".maincontent");
-let inScroll = false;
 
-const mobileDetect = new MobileDetect(window.navigator.userAgent);
-const isMobile = mobileDetect.mobile();
+  /*$(window).on('resize', () => {
 
-const setActiveMenuItem = itemEq => {
-  $('.breadcrumbs__item').eq(itemEq).addClass('active')
-    .siblings().removeClass('active')
-}
-
-const performTransition = sectionEq => {
-  const position = `${sectionEq * -100}%`;
-
-  if (inScroll) return;
-
-  inScroll = true;
-
-  sections
-    .eq(sectionEq)
-    .addClass("active")
-    .siblings()
-    .removeClass("active");
-
-  display.css({
-    transform: `translate(0, ${position})`,
-    "-webkit-transform": `translate(0, ${position})`
-  });
-
-  setTimeout(() => {
-    inScroll = false;
-    setActiveMenuItem(sectionEq);
-  }, 1300); // продолжительность анимации + 300ms - потому что закончится инерция
-};
-
-const scrollToSection = direction => {
-  const activeSection = sections.filter(".active");
-  const nextSection = activeSection.next();
-  const prevSection = activeSection.prev();
-
-  if (direction === "up" && prevSection.length) {
-    performTransition(prevSection.index());
-  }
-
-  if (direction === "down" && nextSection.length) {
-    performTransition(nextSection.index());
-  }
-};
-
-$(document).on({
-  wheel: e => {
-    const deltaY = e.originalEvent.deltaY;
-    const direction = deltaY > 0 ? "down" : "up";
-
-    scrollToSection(direction);
-  },
-  keydown: e => {
-    switch (e.keyCode) {
-      case 40:
-        scrollToSection("down");
-        break;
-
-      case 38:
-        scrollToSection("up");
-        break;
-    }
-  },
-  touchmove: e => e.preventDefault()
-
-  // touchstart touchend touchmove
-});
+		if ($(window).width() < '768' && ($(window).width() > '480' ) {
+      player.css('width', '720px');
+      player.css('height', '450px');
+		} else if ($(window).width() < '480' && ($(window).width() > '320' ) {
+      player.css('width', '460px');
+      player.css('height', '285px');
+		};
+  });*/
 
 
-$('[data-scroll-to]').on('click', e => {
-  e.preventDefault();
-
-  const target = parseInt($(e.currentTarget).attr('data-scroll-to'));
-
-
-  performTransition(target);
-
-})
-
-if (isMobile) {
-  $(document).swipe({
-    swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
-      /**
-       * плагин возвращает фактическое...
-       * ...
-       */
-      /*
-      const scrollDirection = direction === 'down' ? 'up' : 'down';
-
-      scrollToSection(scrollDirection);
-    }
-  });
-}
-*/
