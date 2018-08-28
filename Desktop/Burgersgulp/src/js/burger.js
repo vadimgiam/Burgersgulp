@@ -518,6 +518,7 @@ let player;
 
   function onPlayerStateChange(event) {
     var playerButton = $(".player__start");
+    var playerButtonPause = $(".paused");
 
     switch (event.data) {
       case 1:
@@ -528,8 +529,8 @@ let player;
         break;
       case 2:
         //playerButton.removeClass("paused");
-        //playerButton.addClass("player__start");
-        playerButton.toggleClass("paused player__start ");
+       // playerButtonPause.addClass("player__start");
+       playerButtonPause.toggleClass("paused player__start ");
 
         break;
     }
@@ -601,8 +602,8 @@ let player;
     var playerMuteButton = $(".player__volume-icon");
 
 
-    if (player.mute() !== true) {
-      player.Mute();
+    if (!player.isMuted())  {
+      player.mute();
       //playerSplashButton.addClass("splash-active");
 
     } else {
@@ -612,15 +613,15 @@ let player;
     }
   });
 
-  /*$(window).on('resize', () => {
+  $(window).on('resize', () => {
 
-		if ($(window).width() < '768' && ($(window).width() > '480' ) {
-      player.css('width', '720px');
-      player.css('height', '450px');
-		} else if ($(window).width() < '480' && ($(window).width() > '320' ) {
-      player.css('width', '460px');
-      player.css('height', '285px');
+		if ($(window).width() < '768' && ($(window).width() > '480' )) {
+      $('.player').css('width', '720px');
+      $('.player').css('height', '450px');
+		} else if ($(window).width() < '480' && ($(window).width() > '320' )) {
+      $('.player').css('width', '460px');
+      $('.player').css('height', '285px');
 		};
-  });*/
+  });
 
 

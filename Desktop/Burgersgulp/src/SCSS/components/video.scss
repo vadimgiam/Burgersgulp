@@ -192,6 +192,7 @@ position: absolute;
   cursor: pointer;
   @include tablet {
     background: url("../img/Play-black.svg") center center/cover no-repeat;
+    transform: rotate(180deg);
     width:84px;
   height: 116px;
  }
