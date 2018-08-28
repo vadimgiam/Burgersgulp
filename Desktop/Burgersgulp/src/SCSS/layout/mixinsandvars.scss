@@ -131,6 +131,7 @@ $colorRed:#e35028;
       @content;
   }
 }
+
 @mixin beetweenphoneandMin {
     @media screen and  (max-width:416px) {
         @content;

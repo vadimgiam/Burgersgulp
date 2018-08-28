@@ -200,6 +200,19 @@
     padding-top: 2%;
     padding-left: 1%;
     box-sizing: border-box;
+    @include tablet {
+      top: 64%;
+      left: 21%;
+  }
+  @include phone {
+    top: 63%;
+    left: 8%;
+  }
+  @include beetweenphoneandMin3 {
+    top: 63%;
+    left: 8%;
+    width: 310px;
+  }
 }
 .cont__title{
     @include fontOrangeGagalin;

@@ -483,8 +483,8 @@ function init() {
 let player;
   function onYouTubePlayerAPIReady() {
     player = new YT.Player('yt-player', {
-      height: '405',
-      width: '660',
+     // height: '405',
+     // width: '660',
       videoId: '85CfHN0uJz0',
       playerVars: {
         controls: 0,
@@ -613,7 +613,7 @@ let player;
     }
   });
 
-  $(window).on('resize', () => {
+ /* $(window).on('resize', () => {
 
 		if ($(window).width() < '768' && ($(window).width() > '480' )) {
       $('.player').css('width', '720px');
@@ -622,6 +622,8 @@ let player;
       $('.player').css('width', '460px');
       $('.player').css('height', '285px');
 		};
-  });
+  });*/
+
+//OPS
 
 
