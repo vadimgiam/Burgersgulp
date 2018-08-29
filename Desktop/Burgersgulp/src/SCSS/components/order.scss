@@ -4,6 +4,7 @@
     display: flex;
     justify-content: center;
     text-align: center;
+    margin-top:  9%;
     @include phone {
         text-align: center;
         font-size: 3.57rem;
@@ -20,7 +21,7 @@
     @include section;
     background-color: $colorBlack;
     background-image: url(../img/bg3.jpg);
-    padding-top: 9%;
+
     min-height: 100vh;
 }
 .form__input,
