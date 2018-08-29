@@ -28,7 +28,7 @@
       width: 480px;
     }
     @include phone{
-      width: 460px;
+      width: 320px;
       height: 285px;
     }
     @include beetweenphoneandMin3 {
@@ -46,7 +46,7 @@
     width: 480px;
   }
   @include phone{
-    width: 460px;
+    width: 320px;
     height: 285px;
   }
   @include beetweenphoneandMin3 {
@@ -69,7 +69,7 @@
   }
 
   @include phone{
-    width: 460px;
+    width: 320px;
   }
   @include beetweenphoneandMin3 {
     width: 320px;
@@ -137,10 +137,10 @@ position: absolute;
  }
 
  @include phone{
-  width: 385px;
+  width: 260px;
  }
  @include beetweenphoneandMin3{
-  width: 280px;
+  width: 260px;
 }
 }
 
