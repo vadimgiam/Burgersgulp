@@ -1,7 +1,9 @@
 .footer{
 
     background-color: $colorBlack;
-    @include backgroundImage;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
     background-image: url(../img/bg6.jpg);
     min-height: 60px;
     width: 100%;

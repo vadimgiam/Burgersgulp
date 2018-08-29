@@ -1,5 +1,8 @@
 .map{
-    @include backgroundImage;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
     background-color: #111114;
     background-image: url(../img/map.jpg);
     //margin-bottom: -17px;
