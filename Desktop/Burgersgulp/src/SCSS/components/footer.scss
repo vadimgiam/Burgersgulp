@@ -5,9 +5,10 @@
     background-image: url(../img/bg6.jpg);
     min-height: 60px;
     width: 100%;
-    position: absolute;
-    left: 0;
-    bottom: 0;
+    //position: absolute;
+    //left: 0;
+    //bottom: 0;
+
     @include phone {
         min-height: 117px;
     }
