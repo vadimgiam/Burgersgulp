@@ -359,6 +359,22 @@ commentsPopup ();
 
 
 //слайдер
+/*
+$(function () {
+  $(".slider__link--right").on("click", function(e){
+e.preventDefault();
+
+var $this = $(this),
+    container = $this.closest(".container"),
+    items = contaner.find(".slider__content"),
+    activeSlide
+
+
+
+  });
+});
+*/
+
 
 const left = document.querySelector(".slider__link--left");
 const right = document.querySelector(".slider__link--right");
@@ -378,12 +394,14 @@ right.addEventListener("click", function(event) {
     if (!currentRight) {
       currentRight = 0;
     }
+      result = items.clientWidth * a;
 
-    if (currentRight >= result) {
+
+    if (currentRight < result) {
       items.style.right = currentRight + items.clientWidth + "px";
     }else{
-       items.style.right = 0;
-    }
+      items.style.right = 0 + "px";
+   }
   });
 
   left.addEventListener("click", function(event) {

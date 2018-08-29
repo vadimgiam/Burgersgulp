@@ -27,7 +27,7 @@ $colorRed:#e35028;
 
 }
 @mixin section {
-    min-height: 100vh;
+    height: 100vh;
     position: relative;
     overflow: hidden;
 }
