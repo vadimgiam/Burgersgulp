@@ -28,7 +28,7 @@
       width: 480px;
     }
     @include phone{
-      width: 320px;
+      width: 460px;
       height: 285px;
     }
     @include beetweenphoneandMin3 {
@@ -46,7 +46,7 @@
     width: 480px;
   }
   @include phone{
-    width: 320px;
+    width: 460px;
     height: 285px;
   }
   @include beetweenphoneandMin3 {
@@ -69,11 +69,12 @@
   }
 
   @include phone{
-    width: 320px;
+    width: 460px;
   }
   @include beetweenphoneandMin3 {
     width: 320px;
  }
+
 }
 .player__start{
   background-color: transparent;
@@ -137,11 +138,14 @@ position: absolute;
  }
 
  @include phone{
-  width: 260px;
+  width: 380px;
  }
+
  @include beetweenphoneandMin3{
-  width: 260px;
+  width: 220px;
 }
+
+
 }
 
 .player__playback-button {
