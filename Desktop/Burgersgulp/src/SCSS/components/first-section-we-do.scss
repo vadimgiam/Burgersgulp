@@ -15,7 +15,9 @@ body {
    width: 100%;
    height: 100%;
 }
-
+body.blocked-scroll {
+  overflow: hidden;
+}
 .wrapper {
     position: relative;
     width: 100%;
