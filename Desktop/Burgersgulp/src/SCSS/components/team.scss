@@ -23,6 +23,9 @@ min-height: 100%;
 @include tablet {
     width: 100%;
 }
+@include beetweenphoneandMin {
+  padding-top: 35%;
+}
 }
 .team__title{
     @include fontOrangeGagalin;

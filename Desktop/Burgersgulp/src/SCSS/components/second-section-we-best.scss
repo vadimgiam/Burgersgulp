@@ -8,6 +8,13 @@
     background-image: url(../img/bg2.jpg);
 
 }
+.we-best .container{
+  @include beetweenphoneandMin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
 .we-best__title {
     @include fontOrangeGagalin;
     color: $colorBlack;

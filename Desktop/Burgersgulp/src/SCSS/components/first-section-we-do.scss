@@ -131,6 +131,9 @@ body {
 }
 
 .we-do__text--second {
+  @include beetweenFullandTablet4  {
+    margin-bottom: 0;
+}
     @include fontWhiteLifehack;
     text-align: center;
 }
@@ -178,6 +181,19 @@ body {
     position: absolute;
     top: -6px;
     left: -6px;
+
+}
+.breadcrumbs__link:active {
+  content: "";
+  border: 1px solid white;
+  height: 16px;
+  width: 16px;
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+  top: -6px;
+  left: -6px;
+
 }
 
 .breadcrumbs__link:active::before {
@@ -209,6 +225,10 @@ body {
     background-position: center center;
     width: 1.875rem;
     height: 1rem;
+    @include beetweenphoneandMin {
+      width: 2.875rem;
+      height: 2rem;
+    }
 }
 
 /*Сетки*/
@@ -216,8 +236,14 @@ body {
 .header {
     display: flex;
     margin-bottom: -5%;
+    @include beetweenFullandTablet4  {
+     margin-bottom: -10%;
+  }
     @include tablet {
       margin-bottom: -9%;
+    }
+    @include beetweenphoneandMin {
+      margin-bottom: 7%;
     }
 }
 
@@ -278,6 +304,10 @@ body {
 
 .we-do__content {
     display: flex;
+    @include beetweenFullandTablet4  {
+      flex-direction: column;
+      align-items: center;
+  }
     @include tablet {
         flex-direction: column;
         align-items: center;
@@ -292,6 +322,11 @@ body {
     width: 28.18rem;
     height: 26.5rem;
     background-size: cover;
+    @include beetweenFullandTablet4  {
+      margin-left: 0;
+        width: 26.18rem;
+        height: 24.5rem;
+  }
     @include tablet {
         margin-left: 0;
         width: 26.18rem;
@@ -303,6 +338,13 @@ body {
     margin-left: 3%;
     padding-top: 14%;
     width: 41%;
+    @include beetweenFullandTablet4  {
+      padding-top: 0%;
+      margin-left: 0;
+      width: 90%;
+      text-align: center;
+      margin-top: -3%;
+   }
     @include tablet {
         margin-left: 1%;
         padding-top: 0%;
@@ -327,6 +369,9 @@ body {
 .we-do__text--first {
     margin-bottom: 5%;
     display: block;
+    @include beetweenFullandTablet4  {
+      margin-bottom: 0;
+   }
     @include tablet {
     text-align: center;
     margin-bottom: -1%;
@@ -350,6 +395,9 @@ body {
     display: flex;
     justify-content: center;
     margin-top: 8%;
+    @include beetweenFullandTablet4  {
+      margin-top: 0;
+   }
     @include tablet {
         padding-bottom: 4%;
         margin-top: 0;
@@ -359,6 +407,9 @@ body {
     }
     @include phone {
         padding-bottom: 4%;
+    }
+    @include beetweenphoneandMin {
+      margin-top: 8%;
     }
 }
 
@@ -410,6 +461,15 @@ body {
         padding: 0;
         margin-top: 10%;
     }
+    @include phone {
+      margin-top: 25%;
+  }
+  @include beetweenphoneandMin {
+    margin-top: 35%;
+}
+@include beetweenphoneandMin2 {
+  margin-top: 45%;
+}
 }
 
 .nav-popup--list {

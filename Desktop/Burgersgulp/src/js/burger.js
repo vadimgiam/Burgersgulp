@@ -6,6 +6,8 @@ var navPopup = document.querySelector(".nav-popup");
 var navButtonClose = document.querySelector(".nav-popup__btn");
 var navLink = document.querySelector(".header__nav--hamburger");
 var navItemLink = document.querySelectorAll(".nav-popup--link");
+var section = document.querySelector(".section");
+var maincontent = document.querySelector(".maincontent");
 
 var op = 0.1;
 
@@ -67,7 +69,11 @@ for (var i = 0; i < navItemLink.length; i++){
     });
 
 }
-
+navPopup.addEventListener("wheel", function(e){
+e.preventDefault();
+//section.classList.remove("active");
+maincontent.style.transform = "translate(0, 0)";
+});
 
 //Аккордеон Команда
 
@@ -386,7 +392,7 @@ let result = 0;
 for(var i=1; i<itemSl.length; i++){
  a++;
 }
-console.log(result);
+
 right.addEventListener("click", function(event) {
     event.preventDefault();
     let currentRight = parseInt(computed.right);

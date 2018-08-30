@@ -66,14 +66,14 @@
 }
 .menu__item.menu__item--active > .menu__block--open{
 
-    width: 33.75rem;
+  width: 100%;
     overflow: visible;
 
      @include tablet {
-       width: 15.75rem;
+      width: 100%;
     }
     @include phone {
-        width: 10.75rem;
+      width: 100%;
     }
 }
 .menu__item.menu__item--active  .menu__item--yellow {

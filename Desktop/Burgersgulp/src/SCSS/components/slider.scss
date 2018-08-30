@@ -12,7 +12,9 @@
     @include phone {
       padding-top: 5%;
     }
-
+    @include beetweenphoneandMin {
+      padding-top: 30%;
+    }
 }
 .slider__gamb--img{
     width: 28.43rem;
