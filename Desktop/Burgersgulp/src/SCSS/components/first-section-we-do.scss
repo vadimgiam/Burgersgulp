@@ -15,9 +15,9 @@ body {
    width: 100%;
    height: 100%;
 }
-body.blocked-scroll {
+/*body.blocked-scroll {
   overflow: hidden;
-}
+}*/
 .wrapper {
     position: relative;
     width: 100%;
@@ -88,13 +88,13 @@ body.blocked-scroll {
     border-radius: 5px;
     @include tablet {
         display: block;
-        top: 5%;
+        top: 7%;
         right: 5.5%;
     }
 
     @include phone {
         display: block;
-        top: 5.5%;
+        top: 7%;
         right: 7.5%;
     }
     @include beetweenphoneandMin {
@@ -217,7 +217,7 @@ body.blocked-scroll {
     display: flex;
     margin-bottom: -5%;
     @include tablet {
-        margin-bottom: 5%;
+      margin-bottom: -9%;
     }
 }
 
@@ -294,6 +294,8 @@ body.blocked-scroll {
     background-size: cover;
     @include tablet {
         margin-left: 0;
+        width: 26.18rem;
+        height: 24.5rem;
     }
 }
 
@@ -308,6 +310,7 @@ body.blocked-scroll {
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-top: -5%;
     }
     @include phone {
         width: 70%;
@@ -326,6 +329,7 @@ body.blocked-scroll {
     display: block;
     @include tablet {
     text-align: center;
+    margin-bottom: -1%;
     }
 }
 
@@ -348,6 +352,10 @@ body.blocked-scroll {
     margin-top: 8%;
     @include tablet {
         padding-bottom: 4%;
+        margin-top: 0;
+    }
+    @include beetweenFullandTablet2{
+      margin-top: -3%;
     }
     @include phone {
         padding-bottom: 4%;
@@ -400,7 +408,7 @@ body.blocked-scroll {
     @include tablet {
         margin: 0;
         padding: 0;
-        margin-top: 28%;
+        margin-top: 10%;
     }
 }
 

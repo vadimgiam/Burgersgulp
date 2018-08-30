@@ -201,11 +201,11 @@
     padding-left: 1%;
     box-sizing: border-box;
     @include tablet {
-      top: 64%;
+      top: 28%;
       left: 21%;
   }
   @include phone {
-    top: 63%;
+    top: 28%;
     left: 8%;
   }
   @include beetweenphoneandMin3 {
