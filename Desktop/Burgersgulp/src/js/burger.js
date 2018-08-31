@@ -637,30 +637,22 @@ let player;
     }
   });
 
- /* $(window).on('resize', () => {
-
-		if ($(window).width() < '768' && ($(window).width() > '480' )) {
-      $('.player').css('width', '720px');
-      $('.player').css('height', '450px');
-		} else if ($(window).width() < '480' && ($(window).width() > '320' )) {
-      $('.player').css('width', '460px');
-      $('.player').css('height', '285px');
-		};
-  });*/
-
 //OPS
 
 const sections = $(".section");
 const display = $(".maincontent");
+const breadcrumb = $('.breadcrumbs__link');
 let inScroll = false;
 
 const mobileDetect = new MobileDetect(window.navigator.userAgent);
 const isMobile = mobileDetect.mobile();
 
-const setActiveMenuItem = itemEq => {
-  $('.breadcrumbs__item').eq(itemEq).addClass('active')
-    .siblings().removeClass('active')
-}
+/*const setActiveMenuItem = itemEq => {
+  //$('.breadcrumbs__item').eq(itemEq).addClass('active')
+  $('.breadcrumbs__link').eq(itemEq).addClass('breadcrumbs__link--active')
+   // .siblings().removeClass('active')
+    .siblings().removeClass('breadcrumbs__link--active')
+}*/
 
 const performTransition = sectionEq => {
   const position = `${sectionEq * -100}%`;
